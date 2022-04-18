@@ -1,0 +1,45 @@
+@import './src/styles/variables';
+
+.thisDay {
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  background: var(#{--componentsBackgroundDefault});
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+}
+
+.topBlock {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    width: 119px;
+    height: 119px;
+  }
+
+  .thisTemp {
+    font-size: 96px;
+    font-weight: 500;
+    color: $primaryColor;
+  }
+
+  .thisDayName {
+    font-size: 40px;
+    color: var(#{--textColorDefault});
+  }
+}
+
+.bottomBlock {
+  .thisTime, .thisCity {
+    color: $secondaryColor;
+    font-size: 25px;
+
+    &:first-child {
+      margin-bottom: 14px;
+    }
+  }
+}

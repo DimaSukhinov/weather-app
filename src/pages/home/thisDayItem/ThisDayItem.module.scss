@@ -1,0 +1,37 @@
+@import './src/styles/variables';
+
+.thisDayItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .logo, .name {
+    margin-right: 20px;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: var(#{--cardShadowDefault});
+    border-radius: 50%;
+  }
+
+  .name {
+    font-size: 14px;
+    color: $secondaryColor;
+  }
+
+  .value {
+    font-size: 14px;
+    color: var(#{--textColorDefault});
+  }
+}

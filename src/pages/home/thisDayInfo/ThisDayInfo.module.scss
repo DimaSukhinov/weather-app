@@ -1,0 +1,19 @@
+@import './src/styles/variables';
+
+.thisDayInfo {
+  position: relative;
+  padding: 40px;
+  max-width: 750px;
+  width: 100%;
+  background: var(#{--componentsBackgroundDefault});
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+}
+
+.cloudImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 460px;
+  border-radius: 0 20px 0 0;
+}
