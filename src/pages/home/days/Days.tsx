@@ -14,7 +14,7 @@ export type DaysType = {
     info: string
 }
 
-export const Days = () => {
+export const Days = React.memo(() => {
 
     const days: DaysType[] = [
         {
@@ -87,4 +87,4 @@ export const Days = () => {
             </div>
         </>
     )
-}
+})

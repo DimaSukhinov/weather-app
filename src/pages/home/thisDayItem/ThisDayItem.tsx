@@ -7,7 +7,7 @@ type itemPropsType = {
     items: itemsType
 }
 
-export const ThisDayItem = (props: itemPropsType) => {
+export const ThisDayItem = React.memo((props: itemPropsType) => {
     return (
         <div className={s.thisDayItem}>
             <div className={s.logo}>
@@ -17,4 +17,4 @@ export const ThisDayItem = (props: itemPropsType) => {
             <div className={s.value}>{props.items.value}</div>
         </div>
     )
-}
+})

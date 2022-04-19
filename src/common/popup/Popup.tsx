@@ -4,7 +4,7 @@ import {ThisDayItem} from '../../pages/home/thisDayItem/ThisDayItem';
 import {itemsType} from '../../pages/home/thisDayInfo/ThisDayInfo';
 import {GlobalSvgSelector} from '../../assets/icons/GlobalSvgSelector';
 
-export const Popup = () => {
+export const Popup = React.memo(() => {
 
     const items: itemsType[] = [
         {iconId: 'TEMP', name: 'Temperature', value: '20° - feels like 17°'},
@@ -39,4 +39,4 @@ export const Popup = () => {
             </div>
         </>
     )
-}
+})

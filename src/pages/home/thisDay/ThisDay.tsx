@@ -2,7 +2,7 @@ import React from 'react'
 import s from './ThisDay.module.scss'
 import {GlobalSvgSelector} from '../../../assets/icons/GlobalSvgSelector';
 
-export const ThisDay = () => {
+export const ThisDay = React.memo(() => {
     return (
         <div className={s.thisDay}>
             <div className={s.topBlock}>
@@ -18,4 +18,4 @@ export const ThisDay = () => {
             </div>
         </div>
     )
-}
+})

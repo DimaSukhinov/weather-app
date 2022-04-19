@@ -5,7 +5,7 @@ import {MonthStatistics} from './pages/monthStatistics/MonthStatistics';
 import {Header} from './common/header/Header';
 import {Popup} from './common/popup/Popup';
 
-export const App = () => {
+export const App = React.memo(() => {
     return (
         <div className={'globalContainer'}>
             {/*<Popup/>*/}
@@ -19,4 +19,4 @@ export const App = () => {
             </div>
         </div>
     )
-}
+})

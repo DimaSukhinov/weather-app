@@ -4,7 +4,7 @@ import {ThisDay} from './thisDay/ThisDay';
 import {ThisDayInfo} from './thisDayInfo/ThisDayInfo';
 import {Days} from './days/Days';
 
-export const Home = () => {
+export const Home = React.memo(() => {
     return (
         <div className={s.home}>
             <div className={s.homeWrapper}>
@@ -14,4 +14,4 @@ export const Home = () => {
             <Days/>
         </div>
     )
-}
+})

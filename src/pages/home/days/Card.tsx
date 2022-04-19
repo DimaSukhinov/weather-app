@@ -7,7 +7,7 @@ type CardPropsType = {
     days: DaysType
 }
 
-export const Card = (props: CardPropsType) => {
+export const Card = React.memo((props: CardPropsType) => {
     return (
         <div className={s.card}>
             <div>
@@ -22,4 +22,4 @@ export const Card = (props: CardPropsType) => {
             </div>
         </div>
     )
-}
+})

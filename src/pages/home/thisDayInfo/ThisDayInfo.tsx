@@ -11,7 +11,7 @@ export type itemsType = {
     value: string
 }
 
-export const ThisDayInfo = () => {
+export const ThisDayInfo = React.memo(() => {
 
     const items: itemsType[] = [
         {iconId: 'TEMP', name: 'Temperature', value: '20° - feels like 17°'},
@@ -32,4 +32,4 @@ export const ThisDayInfo = () => {
             <img src={cloudWeather} alt="cloud weather" className={s.cloudImg}/>
         </div>
     )
-}
+})

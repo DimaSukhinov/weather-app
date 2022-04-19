@@ -5,7 +5,7 @@ type buttonsType = {
     value: string
 }
 
-export const Tabs = () => {
+export const Tabs = React.memo(() => {
 
     const buttons: buttonsType[] = [
         {value: 'For a week'},
@@ -29,4 +29,4 @@ export const Tabs = () => {
             </div>
         </div>
     )
-}
+})
