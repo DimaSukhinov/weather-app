@@ -2,8 +2,9 @@ import React from 'react'
 import s from './ThisDayInfo.module.scss'
 import cloudWeather from '../../../assets/images/cloudWeather.png'
 import {ThisDayItem} from '../thisDayItem/ThisDayItem';
+import {WeatherType} from '../../../store/types';
 
-export type IconIdType = 'TEMP' | 'PRESSURE' | 'PRECIPITATION' | 'WIND'
+export type IconIdType = 'TEMP' | 'PRESSURE' | 'HUMIDITY' | 'WIND'
 
 export type itemsType = {
     iconId: IconIdType
@@ -11,13 +12,21 @@ export type itemsType = {
     value: string
 }
 
-export const ThisDayInfo = React.memo(() => {
+type ThisDayInfoType = {
+    weatherDay: WeatherType
+}
+
+export const ThisDayInfo = React.memo((props: ThisDayInfoType) => {
 
     const items: itemsType[] = [
-        {iconId: 'TEMP', name: 'Temperature', value: '20° - feels like 17°'},
-        {iconId: 'PRESSURE', name: 'Pressure', value: '765 mmHg - normal'},
-        {iconId: 'PRECIPITATION', name: 'Precipitation', value: 'No precipitation'},
-        {iconId: 'WIND', name: 'Wind', value: '3 m/s southwest - light breeze'}
+        {
+            iconId: 'TEMP',
+            name: 'Temperature',
+            value: `${Math.ceil(props.weatherDay.main.temp)}° - feels like ${Math.ceil(props.weatherDay.main.feels_like)}°`
+        },
+        {iconId: 'PRESSURE', name: 'Pressure', value: `${props.weatherDay.main.pressure} mmHg`},
+        {iconId: 'HUMIDITY', name: 'Humidity', value: `${props.weatherDay.main.humidity}%`},
+        {iconId: 'WIND', name: 'Wind', value: `${props.weatherDay.wind.speed} m/s`}
     ]
 
     return (
@@ -25,7 +34,7 @@ export const ThisDayInfo = React.memo(() => {
             <div className={s.thisDayItems}>
                 {
                     items.map((i) => {
-                        return <ThisDayItem key={i.iconId} items={i} />
+                        return <ThisDayItem key={i.iconId} items={i}/>
                     })
                 }
             </div>

@@ -9,7 +9,7 @@ export const Popup = React.memo(() => {
     const items: itemsType[] = [
         {iconId: 'TEMP', name: 'Temperature', value: '20° - feels like 17°'},
         {iconId: 'PRESSURE', name: 'Pressure', value: '765 mmHg - normal'},
-        {iconId: 'PRECIPITATION', name: 'Precipitation', value: 'No precipitation'},
+        {iconId: 'HUMIDITY', name: 'Precipitation', value: 'No precipitation'},
         {iconId: 'WIND', name: 'Wind', value: '3 m/s southwest - light breeze'}
     ]
 
@@ -21,7 +21,7 @@ export const Popup = React.memo(() => {
                     <div className={s.temp}>20°</div>
                     <div className={s.date}>Wednesday</div>
                     <div className={s.img}>
-                        <GlobalSvgSelector id={'SUN'}/>
+                        <GlobalSvgSelector id={'01d'}/>
                     </div>
                     <div className={s.time}>Time: <span>21:54</span></div>
                     <div className={s.city}>City: <span>Minsk</span></div>

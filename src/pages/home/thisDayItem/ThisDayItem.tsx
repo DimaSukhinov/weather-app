@@ -8,6 +8,7 @@ type itemPropsType = {
 }
 
 export const ThisDayItem = React.memo((props: itemPropsType) => {
+
     return (
         <div className={s.thisDayItem}>
             <div className={s.logo}>

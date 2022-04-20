@@ -3,7 +3,8 @@ import s from './Days.module.scss'
 import {Card} from './Card';
 import {Tabs} from './Tabs';
 
-export type IconIdTypes = 'SUN' | 'SMALL-RAIN-SUN' | 'SMALL-RAIN' | 'MAINLY-CLOUDY' | 'RAINY'
+export type IconIdTypes = '01d' | '01n' | '02d' | '02n' | '03d' | '03n' | '04d' | '04n'
+    | '09d' | '09n' | '10d' | '10n' | '11d' | '11n' | '13d' | '13n' | '50d' | '50n' | ''
 
 export type DaysType = {
     day: string
@@ -20,7 +21,7 @@ export const Days = React.memo(() => {
         {
             day: 'Today',
             date: '17 apr',
-            iconId: 'SUN',
+            iconId: '01d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Сloudy'
@@ -28,7 +29,7 @@ export const Days = React.memo(() => {
         {
             day: 'Tomorrow',
             date: '18 apr',
-            iconId: 'SMALL-RAIN-SUN',
+            iconId: '10d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Light rain and sunshine'
@@ -36,7 +37,7 @@ export const Days = React.memo(() => {
         {
             day: 'Wed',
             date: '19 apr',
-            iconId: 'SMALL-RAIN',
+            iconId: '09d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Small rain'
@@ -44,7 +45,7 @@ export const Days = React.memo(() => {
         {
             day: 'Thu',
             date: '20 apr',
-            iconId: 'MAINLY-CLOUDY',
+            iconId: '04d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Mainly cloudy'
@@ -52,7 +53,7 @@ export const Days = React.memo(() => {
         {
             day: 'Fri',
             date: '21 apr',
-            iconId: 'RAINY',
+            iconId: '09d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Rainy'
@@ -60,7 +61,7 @@ export const Days = React.memo(() => {
         {
             day: 'Sat',
             date: '22 apr',
-            iconId: 'SUN',
+            iconId: '01d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Rainy'
@@ -68,7 +69,7 @@ export const Days = React.memo(() => {
         {
             day: 'Sun',
             date: '23 apr',
-            iconId: 'SMALL-RAIN-SUN',
+            iconId: '10d',
             tempDay: '+18',
             tempNight: '+15',
             info: 'Rainy'
@@ -81,7 +82,7 @@ export const Days = React.memo(() => {
             <div className={s.days}>
                 {
                     days.map((d) => {
-                        return <Card days={d}/>
+                        return <Card key={d.day} days={d}/>
                     })
                 }
             </div>
