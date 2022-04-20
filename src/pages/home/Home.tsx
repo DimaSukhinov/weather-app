@@ -8,6 +8,7 @@ import {fetchCurrentWeather} from '../../store/thunks/fetchCurrentWeather';
 
 type HomePropsType = {
     city: string
+    openPopup: () => void
 }
 
 export const Home = React.memo((props: HomePropsType) => {
@@ -25,7 +26,7 @@ export const Home = React.memo((props: HomePropsType) => {
                 <ThisDay weatherDay={weather.weatherDay}/>
                 <ThisDayInfo weatherDay={weather.weatherDay}/>
             </div>
-            <Days/>
+            <Days openPopup={props.openPopup}/>
         </div>
     )
 })

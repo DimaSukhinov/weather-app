@@ -5,11 +5,12 @@ import {GlobalSvgSelector} from '../../../assets/icons/GlobalSvgSelector';
 
 type CardPropsType = {
     days: DaysType
+    openPopup: () => void
 }
 
 export const Card = React.memo((props: CardPropsType) => {
     return (
-        <div className={s.card}>
+        <div className={s.card} onClick={props.openPopup}>
             <div>
                 <div className={s.day}>{props.days.day}</div>
                 <div className={s.date}>{props.days.date}</div>

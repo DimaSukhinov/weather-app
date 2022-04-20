@@ -24,7 +24,7 @@ export const ThisDay = React.memo((props: ThisDayPropsType) => {
                 <div className={s.thisTime}>Time:
                     <span>
                         {props.weatherDay.name === 'Minsk' ? ` ${data.getHours()}:${data.getMinutes() < 10 ? `0${data.getMinutes()}` : `${data.getMinutes()}`}` : ''}
-                        {props.weatherDay.name === 'Miami' ? ` ${data.getHours() - 7}:${data.getMinutes() < 10 ? `0${data.getMinutes()}` : `${data.getMinutes()}`}` : ''}
+                        {props.weatherDay.name === 'Dallas' ? ` ${data.getHours() - 7}:${data.getMinutes() < 10 ? `0${data.getMinutes()}` : `${data.getMinutes()}`}` : ''}
                         {props.weatherDay.name === 'Warsaw' ? ` ${data.getHours() - 1}:${data.getMinutes() < 10 ? `0${data.getMinutes()}` : `${data.getMinutes()}`}` : ''}
                     </span>
                 </div>

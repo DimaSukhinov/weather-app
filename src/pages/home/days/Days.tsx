@@ -15,7 +15,11 @@ export type DaysType = {
     info: string
 }
 
-export const Days = React.memo(() => {
+type DaysPropsType = {
+    openPopup: () => void
+}
+
+export const Days = React.memo((props: DaysPropsType) => {
 
     const days: DaysType[] = [
         {
@@ -82,7 +86,7 @@ export const Days = React.memo(() => {
             <div className={s.days}>
                 {
                     days.map((d) => {
-                        return <Card key={d.day} days={d}/>
+                        return <Card key={d.day} days={d} openPopup={props.openPopup}/>
                     })
                 }
             </div>

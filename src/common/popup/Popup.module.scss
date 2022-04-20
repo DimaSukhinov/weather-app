@@ -10,8 +10,8 @@
 
 .popup {
   position: absolute;
-  top: calc(50% - 100px);
-  left: calc(50% - 325px);
+  top: calc(50% - 165px);
+  left: calc(50% - 375px);
   z-index: 1001;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $lightBackground;
+  background: var(#{--componentsBackgroundDefault});
   box-shadow: $boxShadow;
   border-radius: $borderRadius;
 
@@ -36,7 +36,7 @@
     .date {
       font-size: 25px;
       line-height: 30px;
-      color: #000000;
+      color: var(#{--textColorDefault});
       margin-bottom: 12px;
     }
 
