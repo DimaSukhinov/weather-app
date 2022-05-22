@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './ThisDay.module.scss'
-import {GlobalSvgSelector} from '../../../assets/icons/GlobalSvgSelector';
-import {WeatherType} from '../../../store/types';
+import {GlobalSvgSelector} from '../../assets/icons/GlobalSvgSelector'
+import {WeatherType} from '../../api/weather-api'
 
 type ThisDayPropsType = {
     weatherDay: WeatherType

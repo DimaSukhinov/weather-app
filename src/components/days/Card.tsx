@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Days.module.scss'
-import {DaysType} from './Days';
-import {GlobalSvgSelector} from '../../../assets/icons/GlobalSvgSelector';
+import {DaysType} from './Days'
+import {GlobalSvgSelector} from '../../assets/icons/GlobalSvgSelector'
 
 type CardPropsType = {
     days: DaysType

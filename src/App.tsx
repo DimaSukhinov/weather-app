@@ -1,10 +1,10 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {Home} from './pages/home/Home';
-import {Header} from './common/header/Header';
-import {CityStorage} from './Storage';
-import {Popup} from './common/popup/Popup';
+import React, {useCallback, useEffect, useState} from 'react'
+import {Home} from './components/home/Home'
+import {Header} from './common/header/Header'
+import {CityStorage} from './Storage'
+import {Popup} from './common/popup/Popup'
 
-export type CitiesType = 'Minsk' | 'Warsaw' | 'Dallas'
+export type CitiesType = 'Minsk' | 'Warsaw' | 'Dallas' | 'Miami'
 
 export type SelectOptionsType = {
     value: CitiesType,
@@ -20,25 +20,18 @@ export const App = React.memo(() => {
         {value: 'Minsk', label: 'Minsk'},
         {value: 'Dallas', label: 'Dallas'},
         {value: 'Warsaw', label: 'Warsaw'},
+        {value: 'Miami', label: 'Miami'},
     ]
-    const onCurrentCityChange = useCallback((newValue: any) => {
-        setCurrentCity(newValue)
-    }, [])
+    const onCurrentCityChange = useCallback((newValue: any) => setCurrentCity(newValue), [])
 
-    useEffect(() => {
-        CityStorage.setItem('currentCity', currentCity)
-    }, [currentCity])
+    useEffect(() => CityStorage.setItem('currentCity', currentCity), [currentCity])
 
-    const openPopup = useCallback(() => {
-        setPopup(true)
-    }, [])
+    const openPopup = useCallback(() => setPopup(true), [])
 
-    const closePopup = useCallback(() => {
-        setPopup(false)
-    }, [])
+    const closePopup = useCallback(() => setPopup(false), [])
 
     return (
-        <div className={'globalContainer'} onClick={e => (e.currentTarget === e.target) && closePopup()}>
+        <div className={'globalContainer'}>
             {popup ? <Popup popup={popup} closePopup={closePopup}/> : ''}
             <div className={'container'}>
                 <Header selectOptions={selectOptions} currentCity={currentCity}

@@ -1,8 +1,8 @@
 import React from 'react'
 import s from './ThisDayInfo.module.scss'
-import cloudWeather from '../../../assets/images/cloudWeather.png'
-import {ThisDayItem} from '../thisDayItem/ThisDayItem';
-import {WeatherType} from '../../../store/types';
+import cloudWeather from '../../assets/images/cloudWeather.png'
+import {ThisDayItem} from '../thisDayItem/ThisDayItem'
+import {WeatherType} from '../../api/weather-api'
 
 export type IconIdType = 'TEMP' | 'PRESSURE' | 'HUMIDITY' | 'WIND'
 

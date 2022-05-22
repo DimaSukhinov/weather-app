@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Popup.module.scss'
-import {ThisDayItem} from '../../pages/home/thisDayItem/ThisDayItem';
-import {itemsType} from '../../pages/home/thisDayInfo/ThisDayInfo';
+import {ThisDayItem} from '../../components/thisDayItem/ThisDayItem';
+import {itemsType} from '../../components/thisDayInfo/ThisDayInfo';
 import {GlobalSvgSelector} from '../../assets/icons/GlobalSvgSelector';
 import {Modal} from '@material-ui/core';
 

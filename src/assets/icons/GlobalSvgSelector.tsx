@@ -1,6 +1,6 @@
 import React from 'react'
-import {IconIdType} from '../../pages/home/thisDayInfo/ThisDayInfo'
-import {IconIdTypes} from '../../pages/home/days/Days';
+import {IconIdType} from '../../components/thisDayInfo/ThisDayInfo'
+import {IconIdTypes} from '../../components/days/Days';
 
 export type logoIdType = 'HEADER-LOGO' | 'CHANGE-THEME-LOGO' | 'CLOSE' | IconIdType | IconIdTypes
 
@@ -49,7 +49,7 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
             </svg>
         case 'TEMP':
             return <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_2_392)">
+                <g clipPath="url(#clip0_2_392)">
                     <path
                         d="M15.4056 2.98154H19.1057C19.308 2.98154 19.4719 2.81756 19.4719 2.61531C19.4719 2.41306 19.308 2.24908 19.1057 2.24908H15.4056C15.2033 2.24908 15.0394 2.41306 15.0394 2.61531C15.0394 2.81756 15.2034 2.98154 15.4056 2.98154Z"
                         fill="#4F667A"/>
@@ -104,7 +104,7 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
             </svg>
         case 'PRESSURE':
             return <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_2_383)">
+                <g clipPath="url(#clip0_2_383)">
                     <path
                         d="M10.1345 0.281287C9.81729 -0.0359669 9.34139 -0.115308 8.94479 0.201983C8.94479 0.201983 8.86549 0.201983 8.86549 0.281287C8.23094 1.07444 2.3615 8.21294 2.3615 11.8615C2.3615 15.8273 5.53416 19 9.5 19C13.4658 19 16.6385 15.8273 16.6385 11.8615C16.6385 8.21294 10.7691 1.07444 10.1345 0.281287Z"
                         fill="url(#paint0_linear_2_383)"/>
@@ -120,8 +120,8 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
                 <defs>
                     <linearGradient id="paint0_linear_2_383" x1="3.90805" y1="16.3829" x2="15.0729" y2="5.22217"
                                     gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#34CDFA"/>
-                        <stop offset="1" stop-color="#E8D9F1"/>
+                        <stop stopColor="#34CDFA"/>
+                        <stop offset="1" stopColor="#E8D9F1"/>
                     </linearGradient>
                     <clipPath id="clip0_2_383">
                         <rect width="19" height="19" fill="white"/>
@@ -210,8 +210,8 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
                 <defs>
                     <linearGradient id="paint0_linear_2_547" x1="24.0092" y1="12.5099" x2="24.0092" y2="35.1951"
                                     gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#FFC227"/>
-                        <stop offset="1" stop-color="#FFB300"/>
+                        <stop stopColor="#FFC227"/>
+                        <stop offset="1" stopColor="#FFB300"/>
                     </linearGradient>
                 </defs>
             </svg>
@@ -230,15 +230,15 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
                 <defs>
                     <linearGradient id="paint0_linear_2_550" x1="22" y1="16" x2="22" y2="38"
                                     gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#9FC7FF"/>
-                        <stop offset="1" stop-color="#9BC1F5"/>
+                        <stop stopColor="#9FC7FF"/>
+                        <stop offset="1" stopColor="#9BC1F5"/>
                     </linearGradient>
                     SVG namespace
                     www.w3.org
                     <radialGradient id="paint1_radial_2_550" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                                     gradientTransform="translate(17.9439 -22.6966) rotate(-90) scale(20.9574 6.69705)">
-                        <stop stop-color="#486DA8" stop-opacity="0.4"/>
-                        <stop offset="1" stop-color="#486DA8" stop-opacity="0"/>
+                        <stop stopColor="#486DA8" stopOpacity="0.4"/>
+                        <stop offset="1" stopColor="#486DA8" stopOpacity="0"/>
                     </radialGradient>
                 </defs>
             </svg>
@@ -257,13 +257,13 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
                 <defs>
                     <linearGradient id="paint0_linear_2_525" x1="24" y1="6" x2="24" y2="28"
                                     gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#9FC7FF"/>
-                        <stop offset="1" stop-color="#9BC1F5"/>
+                        <stop stopColor="#9FC7FF"/>
+                        <stop offset="1" stopColor="#9BC1F5"/>
                     </linearGradient>
                     <radialGradient id="paint1_radial_2_525" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                                     gradientTransform="translate(10.7539 -24.6966) rotate(-90) scale(20.9574 6.69705)">
-                        <stop stop-color="#486DA8" stop-opacity="0.4"/>
-                        <stop offset="1" stop-color="#486DA8" stop-opacity="0"/>
+                        <stop stopColor="#486DA8" stopOpacity="0.4"/>
+                        <stop offset="1" stopColor="#486DA8" stopOpacity="0"/>
                     </radialGradient>
                 </defs>
             </svg>
@@ -289,18 +289,18 @@ export const GlobalSvgSelector = (props: GlobalSvgSelectorType) => {
                 <defs>
                     <linearGradient id="paint0_linear_2_530" x1="40" y1="8" x2="28.7832" y2="19.0723"
                                     gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#FFB301"/>
-                        <stop offset="1" stop-color="#FFC533"/>
+                        <stop stopColor="#FFB301"/>
+                        <stop offset="1" stopColor="#FFC533"/>
                     </linearGradient>
                     <linearGradient id="paint1_linear_2_530" x1="22" y1="12" x2="22" y2="34"
                                     gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#9FC7FF"/>
-                        <stop offset="1" stop-color="#9BC1F5"/>
+                        <stop stopColor="#9FC7FF"/>
+                        <stop offset="1" stopColor="#9BC1F5"/>
                     </linearGradient>
                     <radialGradient id="paint2_radial_2_530" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                                     gradientTransform="translate(15.0679 -22.6966) rotate(-90) scale(20.9574 6.69705)">
-                        <stop stop-color="#486DA8" stop-opacity="0.4"/>
-                        <stop offset="1" stop-color="#486DA8" stop-opacity="0"/>
+                        <stop stopColor="#486DA8" stopOpacity="0.4"/>
+                        <stop offset="1" stopColor="#486DA8" stopOpacity="0"/>
                     </radialGradient>
                 </defs>
             </svg>

@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './ThisDayItem.module.scss'
-import {itemsType} from '../thisDayInfo/ThisDayInfo';
-import {GlobalSvgSelector} from '../../../assets/icons/GlobalSvgSelector';
+import {itemsType} from '../thisDayInfo/ThisDayInfo'
+import {GlobalSvgSelector} from '../../assets/icons/GlobalSvgSelector'
 
 type itemPropsType = {
     items: itemsType

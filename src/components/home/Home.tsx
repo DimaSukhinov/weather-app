@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react'
 import s from './Home.module.scss'
-import {ThisDay} from './thisDay/ThisDay';
-import {ThisDayInfo} from './thisDayInfo/ThisDayInfo';
-import {Days} from './days/Days';
-import {useCustomDispatch, useCustomSelector} from '../../hooks/Store';
-import {fetchCurrentWeather} from '../../store/thunks/fetchCurrentWeather';
+import {ThisDay} from '../thisDay/ThisDay'
+import {ThisDayInfo} from '../thisDayInfo/ThisDayInfo'
+import {Days} from '../days/Days'
+import {useAppSelector} from '../../store/Store'
+import {setWeatherTC} from '../../store/weather-reducer'
+import {useDispatch} from 'react-redux'
 
 type HomePropsType = {
     city: string
@@ -13,11 +14,12 @@ type HomePropsType = {
 
 export const Home = React.memo((props: HomePropsType) => {
 
-    const dispatch = useCustomDispatch()
-    const weather = useCustomSelector((state) => state.currentWeatherSliceReducer)
+    const dispatch = useDispatch()
+    const weather = useAppSelector(state => state.weather)
 
     useEffect(() => {
-        dispatch(fetchCurrentWeather(props.city))
+        // @ts-ignore
+        dispatch(setWeatherTC(props.city))
     }, [dispatch, props])
 
     return (
