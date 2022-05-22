@@ -1,30 +1,53 @@
 import axios from 'axios'
-import {IconIdTypes} from '../components/days/Days'
 
 export const instance = axios.create({
-    baseURL: 'https://api.openweathermap.org/data/2.5/'
+    baseURL: 'https://api.weatherapi.com/v1/'
 })
 
 export const weatherAPI = {
     currentWeather(city: string) {
-        return instance.get<WeatherType>(`weather?q=${city}&units=metric&appid=c80979a8025e10b8119c549a58247313`)
+        return instance.get<CurrentWeatherType>(`current.json?key=f993889e14d7490dbb984527222205&q=${city}`)
+    },
+    weatherForFewDays(city: string, days: number) {
+        return instance.get<weatherForFewDaysType>(`forecast.json?key=f993889e14d7490dbb984527222205&q=${city}&days=${days}`)
     }
 }
 
-export type WeatherType = {
-    main: {
-        feels_like: number
-        temp: number
-        pressure: number
+export type CurrentWeatherType = {
+    location: {
+        name: string
+        localtime: string
+    },
+    current: {
+        feelslike_c: number
+        temp_c: number
+        pressure_mb: number
         humidity: number
-    },
-    name: string,
-    wind: {
-        speed: number
-    },
-    weather: [
-        {
-            icon: IconIdTypes
+        wind_kph: number
+        condition: {
+            icon: string
         }
-    ]
+    },
+}
+
+export type weatherForFewDaysType = {
+    location: {
+        name: string
+        localtime: string
+    },
+    forecast: {
+        forecastday: DayForecastType[],
+    }
+}
+
+export type DayForecastType = {
+    date: string,
+    day: {
+        maxtemp_c: number
+        mintemp_c: number
+        condition: {
+            text: string
+            icon: string
+        }
+    }
 }

@@ -1,42 +1,56 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useCallback, useEffect, useState} from 'react'
 import {Home} from './components/home/Home'
 import {Header} from './common/header/Header'
 import {CityStorage} from './Storage'
-import {Popup} from './common/popup/Popup'
-
-export type CitiesType = 'Minsk' | 'Warsaw' | 'Dallas' | 'Miami'
+import {useDispatch} from 'react-redux'
+import {setCurrentWeatherTC, setWeatherForFewDaysTC} from './store/weather-reducer'
+import {useAppSelector} from './store/Store'
+import {ErrorSnackbar} from './common/ErrorSnackbar'
 
 export type SelectOptionsType = {
-    value: CitiesType,
-    label: CitiesType
+    value: string,
+    label: string
 }
 
 export const App = React.memo(() => {
 
-    const [currentCity, setCurrentCity] = useState<CitiesType>(CityStorage.getItem('currentCity') || 'Minsk')
-    const [popup, setPopup] = useState<boolean>(false)
+    const dispatch = useDispatch()
+    const [currentCity, setCurrentCity] = useState<string>(CityStorage.getItem('currentCity') || 'Minsk')
+    const [search, setSearch] = useState<string>('')
+    const weather = useAppSelector(state => state.weather)
+
+    useEffect(() => {
+        // @ts-ignore
+        dispatch(setCurrentWeatherTC(currentCity))
+        // @ts-ignore
+        dispatch(setWeatherForFewDaysTC(currentCity, 3))
+    }, [currentCity, dispatch])
 
     const selectOptions: SelectOptionsType[] = [
         {value: 'Minsk', label: 'Minsk'},
-        {value: 'Dallas', label: 'Dallas'},
         {value: 'Warsaw', label: 'Warsaw'},
         {value: 'Miami', label: 'Miami'},
     ]
-    const onCurrentCityChange = useCallback((newValue: any) => setCurrentCity(newValue), [])
 
-    useEffect(() => CityStorage.setItem('currentCity', currentCity), [currentCity])
+    const onCurrentCityChange = useCallback((newValue: string) => setCurrentCity(newValue), [])
 
-    const openPopup = useCallback(() => setPopup(true), [])
+    const onChangeSearchHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => setSearch(e.currentTarget.value), [])
 
-    const closePopup = useCallback(() => setPopup(false), [])
+    const onKeyPressHandler = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            setCurrentCity(search)
+            setSearch('')
+        }
+    }, [search])
 
     return (
         <div className={'globalContainer'}>
-            {popup ? <Popup popup={popup} closePopup={closePopup}/> : ''}
             <div className={'container'}>
                 <Header selectOptions={selectOptions} currentCity={currentCity}
-                        onCurrentCityChange={onCurrentCityChange}/>
-                <Home city={currentCity} openPopup={openPopup}/>
+                        onCurrentCityChange={onCurrentCityChange} onKeyPressHandler={onKeyPressHandler}
+                        onChangeSearchHandler={onChangeSearchHandler} search={search}/>
+                <Home weather={weather} city={currentCity}/>
+                <ErrorSnackbar/>
             </div>
         </div>
     )
